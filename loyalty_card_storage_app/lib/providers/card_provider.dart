@@ -32,6 +32,6 @@ class CardProvider with ChangeNotifier {
   }
 
   LoyaltyCard? getCardById(String id) {
-    return _cards.firstWhere((c) => c.id == id, orElse: () => null);
+  return _cards.firstWhere((c) => c.id == id);
   }
 }
