@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import '../providers/card_provider.dart';
-import '../models/loyalty_card.dart';
 
 class CardDetailScreen extends StatelessWidget {
   final String cardId;
@@ -32,7 +31,7 @@ class CardDetailScreen extends StatelessWidget {
             SizedBox(height: 10),
             Text('Card Number: ${card.cardNumber}', style: TextStyle(fontSize: 18)),
             if (card.expiry != null)
-              Text('Expires: ${card.expiry!.toLocal()}'.split(' ')[0]),
+              Text('Expires: ${card.expiry}'),
             SizedBox(height: 40),
             BarcodeWidget(
               data: card.barcodeValue,
